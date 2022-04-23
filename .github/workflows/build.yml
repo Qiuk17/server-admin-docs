@@ -35,5 +35,6 @@ jobs:
           build_dir: docs/.vuepress/dist
           jekyll: false
           verbose: true
+          fqdn: adocs.tianlab-tsinghua.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

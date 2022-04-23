@@ -26,14 +26,14 @@ jobs:
 
       - name: Build VuePress site
         run: npm run docs:build
-        
-      - name: list dist files
-        run: ls docs/.vuepress/dist
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
+        if: success()
         with:
           target_branch: gh-pages
           build_dir: docs/.vuepress/dist
+          jekyll: false
+          verbose: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
